@@ -1,6 +1,12 @@
+from webbrowser import register
+
 from django.contrib import admin
-from .models import User,Post,Comment
+from django.contrib.auth.models import Permission
+
+from .models import Comment, Post, User
+
 # Register your models here.
+admin.site.register(Permission)
 
 class User_Admin(admin.ModelAdmin):
     list_display = ['username','first_name','last_name','email']
