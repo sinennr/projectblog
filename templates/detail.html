@@ -1,0 +1,45 @@
+{% extends 'base.html' %} {% block content %}
+    <style>  
+      body {
+          font-family: 'Kanit', sans-serif;
+          font-size: 17px;
+      }
+      .btn btn-primary {
+          position: absolute;
+          top: 34px;
+          left: 378px;
+      }
+    </style>
+    <form method="POST" action="{% url 'detail' %}">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 card mb-4  mt-3 left  top">
+          
+            <div class="card-body">
+              
+              <h1>{{ post_detail.title }} </h1>
+              <p class="card-text ">{{ post_detail.content | safe }}</p>
+              <button type="submit" class="btn btn-primary">Edit</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 card mb-4  mt-3 left  top">
+            <div class="card-body">
+              <h2>Comment</h2>
+              <p></p>
+              <h4>Write your comment</h4>
+              <textarea input type="text" class="form-control" id="comment" name="comment" value="{{comment}}"></textarea>
+              <p></p>
+              <button type="submit" class="btn btn-primary">save</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </form>
+
+{% endblock content %}
